@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 1: Git y GitHub - Guía Básica</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 25px;
+        }
+        h3 {
+            color: #2c3e50;
+            margin-top: 20px;
+        }
+        code {
+            background-color: #ecf0f1;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95em;
+            color: #e74c3c;
+        }
+        pre {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+        }
+        .tip {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        .glosario {
+            background-color: #e8f4fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .comparacion {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        .comparacion-item {
+            flex: 1;
+            min-width: 200px;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .resumen {
+            margin-top: 30px; 
+            padding: 15px; 
+            background-color: #fff3cd; 
+            border-left: 4px solid #ffc107; 
+            border-radius: 0 5px 5px 0;
+        }
+        footer {
+            margin-top: 40px; 
+            text-align: center; 
+            color: #7f8c8d; 
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Capítulo 1: Git y GitHub - Conceptos Fundamentales</h1>
+        
+        <section>
+            <h2>¿Qué es Git?</h2>
+            <p><strong>Git</strong> es un sistema de control de versiones distribuido. Es una herramienta que permite:</p>
+            <ul>
+                <li>Guardar instantáneas (commits) del estado de tu proyecto</li>
+                <li>Mantener un historial completo de todos los cambios realizados</li>
+                <li>Crear ramas para desarrollar funcionalidades de forma aislada</li>
+                <li>Funcionar completamente en tu computadora (entorno local)</li>
+            </ul>
+            <p>Fue creado por Linus Torvalds (creador de Linux) en 2005.</p>
+        </section>
+
+        <section>
+            <h2>¿Qué es GitHub?</h2>
+            <p><strong>GitHub</strong> es una plataforma en la nube que utiliza Git como base. Es un servicio que permite:</p>
+            <ul>
+                <li>Almacenar copias de tus repositorios en internet</li>
+                <li>Colaborar con otros desarrolladores en proyectos</li>
+                <li>Compartir código abierto con la comunidad</li>
+                <li>Sincronizar proyectos entre diferentes computadoras</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Git vs GitHub: Diferencias principales</h2>
+            <div class="comparacion">
+                <div class="comparacion-item">
+                    <h3 style="color: #e67e22; margin-top: 0;">Git</h3>
+                    <ul>
+                        <li>Es la herramienta (programa)</li>
+                        <li>Funciona sin conexión a internet</li>
+                        <li>Se ejecuta en tu PC local</li>
+                        <li>Maneja el control de versiones</li>
+                    </ul>
+                </div>
+                <div class="comparacion-item">
+                    <h3 style="color: #3498db; margin-top: 0;">GitHub</h3>
+                    <ul>
+                        <li>Es la plataforma web</li>
+                        <li>Requiere conexión a internet</li>
+                        <li>Está alojado en la nube</li>
+                        <li>Aloja repositorios remotos</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tip">
+                <strong>Analogía:</strong> Git es como tu cámara fotográfica local, GitHub es como una red social donde subes y compartes tus fotos.
+            </div>
+        </section>
+
+        <section>
+            <h2>Comandos Básicos de Git</h2>
+            
+            <h3>Configuración inicial:</h3>
+            <pre>git config --global user.name "Tu Nombre"
+git config --global user.email "tu@email.com"</pre>
+            <p><small>Configura tu identidad para que los commits queden correctamente atribuidos.</small></p>
+
+            <h3>Crear un repositorio:</h3>
+            <pre>git init</pre>
+            <p><small>Inicializa un repositorio de Git en la carpeta actual.</small></p>
+
+            <h3>Realizar commits (guardar cambios):</h3>
+            <pre>git add .
+git commit -m "mensaje descriptivo"</pre>
+            <p><small>git add prepara los archivos para el commit, git commit crea la instantánea del proyecto.</small></p>
+
+            <h3>Ver el estado:</h3>
+            <pre>git status</pre>
+            <p><small>Muestra el estado actual de los archivos en el repositorio.</small></p>
+
+            <h3>Ver historial:</h3>
+            <pre>git log</pre>
+            <p><small>Muestra el historial de commits del repositorio.</small></p>
+        </section>
+
+        <section>
+            <h2>Ciclo de vida de los archivos en Git</h2>
+            <p>Los archivos en Git pasan por diferentes estados:</p>
+            <ol>
+                <li><strong>Working Directory:</strong> Archivos modificados en tu carpeta de trabajo</li>
+                <li><strong>Staging Area:</strong> Archivos preparados con <code>git add</code> para ser commitados</li>
+                <li><strong>Repository:</strong> Archivos guardados permanentemente con <code>git commit</code></li>
+            </ol>
+        </section>
+
+        <div class="glosario">
+            <h3>Glosario de términos</h3>
+            <ul>
+                <li><strong>Repositorio:</strong> Carpeta donde Git guarda tu proyecto y su historial de cambios</li>
+                <li><strong>Commit:</strong> Una versión guardada de tu proyecto en un punto específico</li>
+                <li><strong>Branch/Rama:</strong> Una línea independiente de desarrollo</li>
+                <li><strong>Remote/Remoto:</strong> La versión de tu repositorio alojada en GitHub</li>
+                <li><strong>Clone:</strong> Acción de copiar un repositorio de GitHub a tu computadora</li>
+                <li><strong>Push:</strong> Subir cambios locales a GitHub</li>
+                <li><strong>Pull:</strong> Bajar cambios de GitHub a tu computadora</li>
+            </ul>
+        </div>
+
+        <div class="resumen">
+            <p><strong>Resumen:</strong> Git es la herramienta local para control de versiones, mientras que GitHub es la plataforma en la nube para compartir y colaborar en código. Ambos son fundamentales en el desarrollo de software moderno.</p>
+        </div>
+
+        <footer>
+            <p>Capítulo 1 de ? - Guía básica para estudiantes de Ingeniería de Sistemas</p>
+        </footer>
+    </div>
+</body>
+</html>
